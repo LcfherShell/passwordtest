@@ -1,8 +1,16 @@
 # PY-passwordtest <small class='version_passwordtest'>V.1</small>
 
 <h3 align="left">Installation</h3>
-Use `git status` to list all new or modified files that haven't yet been committed.
-
+-Pip
+  ```python -V```
+  -Windows:
+  ```pip install passwordtest```
+  -Unix or Mac:
+  ```pip install passwordtest```
+-GIT
+  -Windows, Unix and Mac:
+  ```git clone https://github.com/LcfherShell/passwordtest```
+  
 -----------------------------------------
 - 📫Bug reports: **LCFHERSHELL@TUTANOTA.COM**
 <h3 align="left">Connect with me:</h3>
