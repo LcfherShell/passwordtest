@@ -25,7 +25,8 @@
     ````
 ### Example CommandPrompt
 
-## 📫Bug reports: **LCFHERSHELL@TUTANOTA.COM**
+## 
+📫Bug reports: **LCFHERSHELL@TUTANOTA.COM**
 <h3 align="left">Sociall Media:</h3>
 <p align="left">
   <small>
