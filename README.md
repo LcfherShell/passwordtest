@@ -1,5 +1,5 @@
-# PY-passwordtest <small class='version_passwordtest'>V.1</small>
 ![GitHub Dark](https://github.com/github-dark.png#gh-light-mode-only)
+# PY-passwordtest <small class='version_passwordtest'>V.1</small>
 ## Installation
 
 - Pip
