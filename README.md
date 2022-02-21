@@ -25,7 +25,6 @@
     ````
 ### Usage Example
 
-    ```````````
     1. from passwordtest.main import PasswordTest
     2. password = 'Hello'
     3. passwordtest = PasswordTest(active=True)#call class
@@ -37,8 +36,7 @@
     9. security = passwordtest._Score_Point(password)##get score point
     10.Precent =passwordtest.Precent_Safesecurity(security, badtime, password)#get percent security
     11.print(goodtime, security, Precent)
-    ```````````
-    
+
 ### Shell Demo
 
 ``open commandprompt and type
