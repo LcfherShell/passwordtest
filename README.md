@@ -18,10 +18,11 @@
 
   --Windows, Unix and Mac:
   
-  ```git clone https://github.com/LcfherShell/passwordtest
+  ````
+     git clone https://github.com/LcfherShell/passwordtest
      cd passwordtest
      python -m pip install . or python setup.py
-  ```
+  ````
   
 -----------------------------------------
 - 📫Bug reports: **LCFHERSHELL@TUTANOTA.COM**
