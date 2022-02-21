@@ -24,7 +24,7 @@
        python -m pip install . or python setup.py
     ````
 ### Example CommandPrompt
-<img align='center' src="https://github.com/LcfherShell/passwordtest/blob/main/images1.png" height="30" width="50">
+<img align='center' src="https://github.com/LcfherShell/passwordtest/blob/main/images1.png" height="240" width="300">
 ## 
 📫Bug reports: **LCFHERSHELL@TUTANOTA.COM**
 <h3 align="left">Sociall Media:</h3>
