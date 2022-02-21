@@ -2,21 +2,21 @@
 
 <h3 align="left">Installation</h3>
 
--Pip
+- Pip
 
   ```python -V```
 
-  --Windows:
+  - Windows:
   
-  ```pip install passwordtest```
+  `python -m pip install passwordtest`
   
-  --Unix or Mac:
+  -- Unix or Mac:
   
-  ```pip install passwordtest```
+  `pip install passwordtest`
   
--GIT
+- GIT
 
-  --Windows, Unix and Mac:
+  -- Windows, Unix and Mac:
   
   ````
      git clone https://github.com/LcfherShell/passwordtest
