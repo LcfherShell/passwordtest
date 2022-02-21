@@ -2,7 +2,7 @@
 
 <h3 align="left">Installation</h3>
 
---------------------------------------------------------------
+-----------------------------------------
 - 📫Bug reports: **LCFHERSHELL@TUTANOTA.COM**
 <h3 align="left">Connect with me:</h3>
 <p align="left">
