@@ -1,6 +1,6 @@
 ![GitHub Dark](https://github.com/github-dark.png#gh-light-mode-only)
 # PY-passwordtest <small class='version_passwordtest'>V.1</small>
-## Installation
+### Installation
 
 - Pip
 
@@ -23,7 +23,7 @@
        cd passwordtest
        python -m pip install . or python setup.py
     ````
-## Example CommandPrompt
+### Example CommandPrompt
 
 ## 📫Bug reports: **LCFHERSHELL@TUTANOTA.COM**
 <h3 align="left">Sociall Media:</h3>
