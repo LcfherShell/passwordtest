@@ -37,7 +37,7 @@
     
     4. required_time = passwordtest.__time__(text=password) #getting time
     
-    5. sorttime = passwordtest.Sort_Pw(text=[required_time[0], required_time[1]) #sorttime by min and max
+    5. sorttime = passwordtest.Sort_Pw(text=[required_time[0], required_time[1]]) #sorttime by min and max
     
     6. badtime = sorttime[1] #time late
     
