@@ -6,17 +6,17 @@
 
   ```python -V```
 
-  -- Windows:
+  - Windows:
   
   `python -m pip install passwordtest`
   
-  -- Unix or Mac:
+  - Unix or Mac:
   
   `pip install passwordtest`
   
 - GIT
 
-  -- Windows, Unix and Mac:
+  - Windows, Unix and Mac:
   
   ````
      git clone https://github.com/LcfherShell/passwordtest
