@@ -1,5 +1,6 @@
 ![GitHub Dark](https://github.com/github-dark.png#gh-light-mode-only)
 # PY-passwordtest <small class='version_passwordtest'>V.1</small>
+<p>This script is to measure password security from Brute Force and Dictionary (worldlist) attacks, by calculating the number, location, and character level. the longer and more varied the character of the password, the harder it is to crack</p>
 ### Installation
 
 - Pip
