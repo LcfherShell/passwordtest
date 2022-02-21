@@ -47,7 +47,7 @@
     
     9. security = passwordtest._Score_Point(password)##get score point
     
-    10.Precent =passwordtest.Precent_Safesecurity(security, badtime, password)#get percent security
+    10.Precent =passwordtest.Precent_Precent_Safe(security, badtime, password)#get percent security
     
     11.print(goodtime, security, Precent)
 
