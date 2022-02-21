@@ -1,7 +1,7 @@
 # PY-passwordtest <small class='version_passwordtest'>V.1</small>
 
 <h3 align="left">Installation</h3>
-
+Use `git status` to list all new or modified files that haven't yet been committed.
 -----------------------------------------
 - 📫Bug reports: **LCFHERSHELL@TUTANOTA.COM**
 <h3 align="left">Connect with me:</h3>
