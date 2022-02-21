@@ -26,15 +26,25 @@
 ### Usage Example
 
     1. from passwordtest.main import PasswordTest
+    
     2. password = 'Hello'
+    
     3. passwordtest = PasswordTest(active=True)#call class
+    
     4. required_time = PasswordTest.__time__(text=data) #getting time
+    
     5. sorttime = passwordtest.Sort_Pw(text=[required_time[0], required_time[1]) #sorttime by min and max
+    
     6. badtime = sorttime[1] #time late
+    
     7. goodtime = sorttime[0] #fastest time
+    
     8. goodtime = passwordtest.Convert_Date(goodtime)#covert to time
+    
     9. security = passwordtest._Score_Point(password)##get score point
+    
     10.Precent =passwordtest.Precent_Safesecurity(security, badtime, password)#get percent security
+    
     11.print(goodtime, security, Precent)
 
 ### Shell Demo
