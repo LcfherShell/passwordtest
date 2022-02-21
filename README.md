@@ -1,6 +1,6 @@
 # PY-passwordtest <small class='version_passwordtest'>V.1</small>
 
-<h3 align="left">Installation</h3>
+## Installation
 
 - Pip
 
@@ -24,7 +24,7 @@
        python -m pip install . or python setup.py
     ````
 --------------------------------------------------------------------    
-<h3 align="left">📫Bug reports: **LCFHERSHELL@TUTANOTA.COM** </h3>
+## 📫Bug reports: **LCFHERSHELL@TUTANOTA.COM**
 --------------------------------------------------------------------
 <h3 align="left">Sociall Media:</h3>
 <p align="left">
