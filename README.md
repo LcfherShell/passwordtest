@@ -23,7 +23,7 @@
        cd passwordtest
        python -m pip install . or python setup.py
     ````
-### Example CommandPrompt
+### Example Console |> CommandPrompt
 
 ``open commandprompt and type
   passwordtest
