@@ -8,21 +8,21 @@
 
   - Windows:
   
-  `python -m pip install passwordtest`
+    `python -m pip install passwordtest`
   
   - Unix or Mac:
   
-  `pip install passwordtest`
+    `pip install passwordtest`
   
 - GIT
 
   - Windows, Unix and Mac:
   
-  ````
-     git clone https://github.com/LcfherShell/passwordtest
-     cd passwordtest
-     python -m pip install . or python setup.py
-  ````
+    ````
+       git clone https://github.com/LcfherShell/passwordtest
+       cd passwordtest
+       python -m pip install . or python setup.py
+    ````
   
 -----------------------------------------
 - 📫Bug reports: **LCFHERSHELL@TUTANOTA.COM**
