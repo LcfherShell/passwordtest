@@ -35,7 +35,7 @@
     
     3. passwordtest = PasswordTest(active=True)#call class
     
-    4. required_time = PasswordTest.__time__(text=data) #getting time
+    4. required_time = PasswordTest.__time__(text=password) #getting time
     
     5. sorttime = passwordtest.Sort_Pw(text=[required_time[0], required_time[1]) #sorttime by min and max
     
