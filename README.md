@@ -6,7 +6,7 @@
 
   ```python -V```
 
-  - Windows:
+  -- Windows:
   
   `python -m pip install passwordtest`
   
