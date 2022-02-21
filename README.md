@@ -50,6 +50,8 @@
     10.Precent =passwordtest.Precent_Safe(security, badtime, password)#get percent security
     
     11.print(goodtime, security, Precent)
+    
+    ``Output: 0:00:13 Horrible 36``
 
 ### Shell Demo
 
