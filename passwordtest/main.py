@@ -1,9 +1,10 @@
 import random, string, psutil, datetime
-import statistics, sys, time, re, os
+import statistics, sys, re, os
 import itertools
 import random
 import string
-import timeit
+from functools import lru_cache, reduce
+#import timeit
 
 #import numpy as np
 
@@ -29,6 +30,7 @@ class PasswordTest:
       self.choice_langth = [0x8, 0xc, 0x1e, 0x32] #8, 12, 50
       self.hightsec = 0
 
+  
   def generate_password(self, text='', Length=0, options=None):
       self.text = text
       self.textlist = self.stringlist['lower']+self.stringlist['digits']
@@ -36,10 +38,13 @@ class PasswordTest:
         self.textlist = self.textlist+self.stringlist['speciall']
 
 
-      if self.text in self.stringlist['speciall']:
-          self.textlist = self.textlist+self.stringlist['speciall']
+      if self.stringlist['speciall'] in self.text:
+        self.textlist = self.textlist+self.stringlist['speciall']
+
       if options == 'upper':
-          self.textlist = self.textlist+self.stringlist['upper']
+        self.textlist = self.textlist+self.stringlist['upper']
+      elif options == 'speciall':
+        self.textlist += self.stringlist['speciall']
 
       try:
         if int(Length)>0x4:
@@ -52,6 +57,8 @@ class PasswordTest:
         Length = self.choice_langth[:2]
         Lengths = int((random.choice(Length)/2)+0x4)
       return ''.join(random.choice(self.textlist) for _ in range(Lengths))
+
+  
   def password_map(self, text, lths=False):
       self.text = str(text)
       self.second_text = [char for char in self.text.upper()]
@@ -74,8 +81,7 @@ class PasswordTest:
 
       reall_dat = random.sample(self.second_text, len(self.second_text))
       return ''.join(data for data in reall_dat)
-
-
+  
   def __time__(self, text):
       self.medium_chuck = 0
       self.specll_chuck = 0
@@ -121,6 +127,7 @@ class PasswordTest:
               numb+=1
           total = self.sums_low+self.sums_up+self.sums_digit+self.sums_special
           return total/2   
+      
       def textsx_(self):
           textsx_buff = []
           y = 2
@@ -155,6 +162,7 @@ class PasswordTest:
           else:
               data = int(fake_chunck)
           return data/self.medium_chuck
+      
       def digits_(self):
           digits_buff = 0
           for data in self.class_text[1][2]:
@@ -162,6 +170,7 @@ class PasswordTest:
                   digits_buff+= data*(0x3c+(self.choice_langth[0x0]**.12))
           return digits_buff
 
+      
       def specials_(self):
           ########special char
           speciall_buff = 0
@@ -224,6 +233,7 @@ class PasswordTest:
       #print(self.per_to_per(text[-1:]))
       return int(self.specll_chuck*2), int(Get_By_Time(self, text=text))
 
+  
   def per_to_per(self, word):
       char = self.stringlist['lower']+self.stringlist['digits']
       output = ''
@@ -233,6 +243,7 @@ class PasswordTest:
               break
       return output
 
+  
   def mp__operations(self, i):
       switcher={
           '0':0xc, #12
@@ -265,9 +276,11 @@ class PasswordTest:
       }
       return switcher.get(i, 0x1e)
 
+  
   def Convert_Date(self, seconds):
       return str(datetime.timedelta(seconds=seconds))
  
+  
   def _Score_Point(self, password):
     password_scores = {0: 'not password type', 1:'Horrible', 2:'Weak', 3:'Medium', 4:'Strong'}
     password_strength = dict.fromkeys(['has_upper', 'has_lower', 'has_num', 'has_speciall'], False)
@@ -290,6 +303,7 @@ class PasswordTest:
     except:
         pass
     return password_scores[score]
+  
   def Precent_Safe(self, optionsz=None, optionsy=None, optionsx=None):
     score = 0
     if optionsz == 'Horrible' or optionsz== 'not password type': #score point
@@ -321,6 +335,7 @@ class PasswordTest:
     return score
 
 
+  
   def Text_Get_Position(self, text):
       self.sums_up = 0
       self.postion_up = []
@@ -351,6 +366,7 @@ class PasswordTest:
 
       return ((self.sums_up, self.sums_low, self.sums_digit, self.sums_special), \
               (self.postion_low, self.postion_up, self.postion_digit, self.postion_sepcial))
+  
   def _get_long_shifts_percharacter(self, x, y):
      x = int(x)
      y = int(y)
@@ -373,6 +389,7 @@ class PasswordTest:
         maximum = maximum+(12*364)
      return int(minimum), int(maximum)
 
+  
   def Sort_Pw(self, text):
     try:
       saving = []
@@ -414,8 +431,103 @@ class PasswordTest:
     
     return minimum, maximum
 
+  
+  def version(self):
+    try:
+      from passwordtest import version
+    except:
+      try:
+        from . import version
+      except:
+        version = "1.2"
+    return version
+
+  
   def __main(self):
     if sys.version_info<(2,6):
       self.active = False
       return self.active
     return self.active
+    #if options == 'binary-to-text':
+    #  "".join([chr(int(binary, 2)) for binary in text.split(" ")]) #binary 2 text
+    #elif options == 'text-to-binary':
+    #  " ".join(f"{ord(i):08b}" for i in text) #text 2 binary
+  
+#class_text[0][3]>3               abcdfga
+
+#outh =  PasswordTest(active=True)
+#print("===========================Password Generator===========================")
+#while True:
+#    data = input('Password Test:>')
+#    for Length_later in outh.choice_langth:
+#        data = outh.password_map(text=data, lths=Length_later)
+#        output = outh.__time__(text=data)
+#        print("-----------------------------------------------------------------------")
+#        print("Password : ",data, "     | Length: ", Length_later)
+#        print("X Time: ",outh.Convert_Date(outh.Get_By_Time(text=data)))
+#        print("Y Time : ", outh.Convert_Date(output))
+
+
+  # create a 1st inner class 
+ # class Inner:
+ #  
+ #  def __init__(self):
+ #    # create a inner class of inner class object
+ #    self.innerclassofinner = self.Innerclassofinner()
+ #    self.innerclassofinner.text = 'New Text'
+    
+ #  def show(self):
+ #   print(self.innerclassofinner.text)
+    
+   # create a inner class of inner
+ #  class Innerclassofinner:
+ #     text = '' 
+ #     def show(self):
+ #        print(self.text)
+ #        self.text = 'KKK'
+  
+# create a outer class object 
+# i.e.Geeksforgeeks class object
+#outer = Geeksforgeeks()
+#outer.show()
+#print()
+  
+# create a inner class object 
+#gfg1 = outer.inner
+#gfg1.show()
+#print()
+  
+# create a inner class of inner class object
+#gfg2 = outer.inner.innerclassofinner
+#gfg2.show()
+
+#gfg1 = outer.inner
+#gfg1.show()
+
+
+
+#data =  input('password> ')
+#ob = Solution()
+#print(ob.strongPasswordChecker(data))
+
+
+#letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+#numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+#symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
+#print("Welcome to the PyPassword Generator!")
+#nr_letters = int(input("How many letters would you like in your password?\n")) 
+#nr_symbols = int(input(f"How many symbols would you like?\n"))
+#nr_numbers = int(input(f"How many numbers would you like?\n"))
+#password_list = []
+#for char in range(1, nr_letters + 1):
+#  password_list.append(random.choice(letters))
+#for char in range(1, nr_symbols + 1):
+#  password_list += random.choice(symbols)
+#for char in range(1, nr_numbers + 1):
+#  password_list += random.choice(numbers)
+
+#random.shuffle(password_list)
+#password = ""
+#for char in password_list:
+#  password += char
+#print(f"Your password is: {password}")
