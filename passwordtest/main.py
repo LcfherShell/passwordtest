@@ -5,7 +5,7 @@ import random
 import string
 import timeit
 
-import numpy as np
+#import numpy as np
 
 class PasswordTest:  
   
@@ -374,94 +374,48 @@ class PasswordTest:
      return int(minimum), int(maximum)
 
   def Sort_Pw(self, text):
-    maximum = max(text)
-    minimum = min(text)
+    try:
+      saving = []
+      rangex = {}
+      for xx in text:
+        if "," in xx:
+          places = xx.replace("days", "")
+          stemp = places.split(",")
+          days = int(stemp[0].strip())
+          clocks = stemp[1].strip()
+          if days>0:
+            days = days*24
+
+          clocks = clocks.split(":")
+          hour = int(clocks[0])+days
+          #clocks[0] = str(hour)
+          #saving.append(":".join(clocks))
+
+          #print(clocks)
+
+          hours = int(hour)
+        else:
+          #saving.append(xx)
+          hour = xx.split(":")
+          hours = int(hour[0])
+
+        rangex[hours] = xx
+
+
+      maxim= max(rangex)
+      minim = min(rangex)
+
+      maximum = rangex[maxim]
+      minimum = rangex[minim]
+
+    except:
+      maximum = max(text)
+      minimum = min(text)
+    
     return minimum, maximum
+
   def __main(self):
     if sys.version_info<(2,6):
       self.active = False
       return self.active
     return self.active
-    #if options == 'binary-to-text':
-    #  "".join([chr(int(binary, 2)) for binary in text.split(" ")]) #binary 2 text
-    #elif options == 'text-to-binary':
-    #  " ".join(f"{ord(i):08b}" for i in text) #text 2 binary
-  
-#class_text[0][3]>3               abcdfga
-
-#outh =  PasswordTest(active=True)
-#print("===========================Password Generator===========================")
-#while True:
-#    data = input('Password Test:>')
-#    for Length_later in outh.choice_langth:
-#        data = outh.password_map(text=data, lths=Length_later)
-#        output = outh.__time__(text=data)
-#        print("-----------------------------------------------------------------------")
-#        print("Password : ",data, "     | Length: ", Length_later)
-#        print("X Time: ",outh.Convert_Date(outh.Get_By_Time(text=data)))
-#        print("Y Time : ", outh.Convert_Date(output))
-
-
-  # create a 1st inner class 
- # class Inner:
- #  
- #  def __init__(self):
- #    # create a inner class of inner class object
- #    self.innerclassofinner = self.Innerclassofinner()
- #    self.innerclassofinner.text = 'New Text'
-    
- #  def show(self):
- #   print(self.innerclassofinner.text)
-    
-   # create a inner class of inner
- #  class Innerclassofinner:
- #     text = '' 
- #     def show(self):
- #        print(self.text)
- #        self.text = 'KKK'
-  
-# create a outer class object 
-# i.e.Geeksforgeeks class object
-#outer = Geeksforgeeks()
-#outer.show()
-#print()
-  
-# create a inner class object 
-#gfg1 = outer.inner
-#gfg1.show()
-#print()
-  
-# create a inner class of inner class object
-#gfg2 = outer.inner.innerclassofinner
-#gfg2.show()
-
-#gfg1 = outer.inner
-#gfg1.show()
-
-
-
-#data =  input('password> ')
-#ob = Solution()
-#print(ob.strongPasswordChecker(data))
-
-
-#letters = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-#numbers = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-#symbols = ['!', '#', '$', '%', '&', '(', ')', '*', '+']
-#print("Welcome to the PyPassword Generator!")
-#nr_letters = int(input("How many letters would you like in your password?\n")) 
-#nr_symbols = int(input(f"How many symbols would you like?\n"))
-#nr_numbers = int(input(f"How many numbers would you like?\n"))
-#password_list = []
-#for char in range(1, nr_letters + 1):
-#  password_list.append(random.choice(letters))
-#for char in range(1, nr_symbols + 1):
-#  password_list += random.choice(symbols)
-#for char in range(1, nr_numbers + 1):
-#  password_list += random.choice(numbers)
-
-#random.shuffle(password_list)
-#password = ""
-#for char in password_list:
-#  password += char
-#print(f"Your password is: {password}")
