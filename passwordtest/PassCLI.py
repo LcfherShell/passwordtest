@@ -16,7 +16,7 @@ class PasswordTest_CLi():
      ==============PASSWORD TEST==============          ********                        
      Menu: 1.Generated PW | press a or 1             ****      ***                
            2.Create by key| press b or 2            ***         ***                     
-           3.Test PW      | press t or 12           ***   V.1   ***                     
+           3.Test PW      | press t or 12           ***   V.1.2 ***                     
            4.Helper       | press h or 0            ***         ****** *****            
            5.exit program | press e or control+z  ****************************          
      Info:                                        ****** ***   **********  ***         
