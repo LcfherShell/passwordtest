@@ -28,10 +28,10 @@
        python -m pip install . or python setup.py
     ````
 ### Usage Example
-
-    1. ````Python hl_lines="4  9-12  25-27"from passwordtest.main import PasswordTest````
+````Python hl_lines="4  9-12  25-27"
+    1. from passwordtest.main import PasswordTest
     
-    2. ````Python hl_lines="4  9-12  25-27"password = 'Hello'````
+    2. password = 'Hello'
     
     3. passwordtest = PasswordTest(active=True)#call class
     
@@ -52,7 +52,7 @@
     11.print(goodtime, security, Precent)
     
     ``Output: 0:00:13 Horrible 36``
-
+````
 ### Shell Demo
 
 ``open commandprompt and type
