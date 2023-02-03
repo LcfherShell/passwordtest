@@ -33,7 +33,7 @@
     
     2. password = 'Hello'
     
-    3. passwordtest = PasswordTest(active=True)#call class
+    3. passwordtest = PasswordTest(active=True, sites=True)#call class
     
     4. required_time = passwordtest.__time__(text=password) #getting time
     
@@ -53,6 +53,31 @@
     
     ``Output: 0:00:13 Horrible 36``
 ````
+### Usage Mini Example 
+````Python hl_lines="4  9-12  25-27"
+    1. from main import PasswordStrength
+    
+    2. password = 'Hello'
+    
+    3. passwordtest = PasswordStrength(active=True, sites=True)#call class
+    
+    4. passwordtest.inputs(password) #getting time
+    
+    5. gettime = passwordtest.get_longtime
+    
+    6. badtime = passwordtest.predict[1] #time late
+    
+    7. goodtime = passwordtest.predict[0] #fastest time
+    
+    8. security = passwordtest.score(password)##get score point
+    
+    9. Precent = Precent =passwordtest.precent(security, goodtime, password)#get percent security
+    
+    10.print(gettime.get("goodtime"), security, Precent
+    
+    ``Output: 0:00:13 Horrible 36``
+````
+
 ### Shell Demo
 
 ``open commandprompt and type
