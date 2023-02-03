@@ -10,8 +10,6 @@ def requestment():
 			print('{} ({}) is installed'.format(dist.key, dist.version))
 		except pkg_resources.DistributionNotFound:
 			packagex.append(package)
-	if len(packagex)==0:
-		packagex.append('requests')
 	return packagex
 
 def Find_Packages():
@@ -31,6 +29,7 @@ setup(
 	description="Password security measurement tool",
 	author="alfiandecker2",
 	author_email=mails,
+	install_requires = requestment() or ['psutil', 'numpy', 'statistics'],
 	packages=Find_Packages(),
 	entry_points={
 			'console_scripts': [
