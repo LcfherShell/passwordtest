@@ -1,5 +1,18 @@
 from setuptools import setup, find_packages
 import os, io
+import pkg_resources
+
+def requestment():
+	packagex = []
+	for package in ['httpx', 'psutil', 'numpy', 'statistics']:
+		try:
+			dist = pkg_resources.get_distribution(package)
+			print('{} ({}) is installed'.format(dist.key, dist.version))
+		except pkg_resources.DistributionNotFound:
+			packagex.append(package)
+	if len(packagex)==0:
+		packagex.append('requests')
+	return packagex
 
 def Find_Packages():
 	getdirectory = os.getcwd()
@@ -10,7 +23,7 @@ def Find_Packages():
 	else:
 		return find_packages()
  
-__VERSION_TOOLS = 1
+__VERSION_TOOLS = 1.3
 mails = 'LCFHERSHELL@TUTANOTA.COM'.lower()
 setup(
 	name="passwordtest",
@@ -24,6 +37,7 @@ setup(
 					'passwordtest = passwordtest.PassCLI:Mainprogram'
 			]
 	},
+	install_requires = requestment() or ['httpx', 'requests', 'psutil', 'numpy', 'statistics'],
 	python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4',
 	zip_safe=False,
 	keywords=["network", "MITM"]
