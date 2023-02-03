@@ -77,7 +77,7 @@
     
     ``Output: 0:00:13 Horrible 36``
     11.##if you want online time
-    12.timeout = passwordtest.calcul_online(passwordtest.predict, passwordtest.sites(sitename="http://example.com"))
+    12.timeout = passwordtest.calcul_online(goodtime, passwordtest.sites(sitename="http://example.com"))
     13.print(passwordtest.Convert_Date(round(timeout, 2))#print end get timeou post <cracking>
 ````
 
