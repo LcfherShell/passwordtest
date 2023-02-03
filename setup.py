@@ -10,7 +10,7 @@ def Find_Packages():
 	else:
 		return find_packages()
  
-__VERSION_TOOLS = 1
+__VERSION_TOOLS = 1.2
 mails = 'LCFHERSHELL@TUTANOTA.COM'.lower()
 setup(
 	name="passwordtest",
