@@ -1298,9 +1298,9 @@ class PasswordStrength(PasswordTest):
 
         return self._Score_Point(data)
 
-    def precent(self, security, data_text, best_time):
+    def precent(self, security=str, score=int, text=str):
 
-        return self.Precent_Safe(security, best_time, data_text)
+        return self.Precent_Safe(optionsz=security, optionsy=score, optionsx=text)
 
     def callback(self, callback, args=[], **kwargs):
 
