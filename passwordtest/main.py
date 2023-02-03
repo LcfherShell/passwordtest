@@ -144,6 +144,9 @@ class PasswordTest:
               chunck = int(psutil.cpu_percent(2)/2)
           else:
               chunck = int(psutil.cpu_percent(2))
+          if chunck < 1:
+              chunck = random.choice([1, 1.2, 1.5])
+              
           fake_chunck = int(4*((60/chunck)+y+x))
           if len(str(fake_chunck))<3:
               x = 0
